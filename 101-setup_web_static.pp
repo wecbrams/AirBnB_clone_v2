@@ -1,4 +1,4 @@
-# Configures a web server to deploy web_static.
+# Configures a web server for deployment of web_static.
 
 # Nginx configuration file
 $nginx_conf = "server {
@@ -12,7 +12,7 @@ $nginx_conf = "server {
         index index.html index.htm;
     }
     location /redirect_me {
-        return 301 http://youtube.com/UCw4X_zayaSiuVYcqWpiaSWw;
+        return 301 http://cuberule.com/;
     }
     error_page 404 /404.html;
     location /404 {
@@ -48,7 +48,7 @@ file { '/data/web_static/shared':
 
 file { '/data/web_static/releases/test/index.html':
   ensure  => 'present',
-  content => "Welcome to The_Masterminds home\n"
+  content => "Holberton School Puppet\n"
 } ->
 
 file { '/data/web_static/current':
@@ -70,7 +70,7 @@ file { '/var/www/html':
 
 file { '/var/www/html/index.html':
   ensure  => 'present',
-  content => "Welcome to The_Masterminds home\n"
+  content => "Holberton School Nginx\n"
 } ->
 
 file { '/var/www/html/404.html':
